@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@source "./src/**/*.{rs,html,css}";
+@source "index.html";
+
+@theme {
+    --color-lyrics-magenta: #ff55cc;
+    --color-lyrics-yellow: #ffcc55;
+
+    --color-discord: #5865f2;
+    --color-bluesky: #1185fe;
+    --color-youtube: #ff0000;
+    --color-reddit: #ff5700;
+    --color-telegram: #229ed9;
+
+    --animate-blink: blink 1s ease-in-out infinite;
+
+    @keyframes blink {
+        0%,
+        100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+    }
+}
+
+@layer utilities {
+    .hover-linear-text {
+        @apply hover:text-transparent hover:bg-clip-text hover:bg-linear-to-b hover:from-lyrics-magenta hover:to-lyrics-yellow;
+    }
+}

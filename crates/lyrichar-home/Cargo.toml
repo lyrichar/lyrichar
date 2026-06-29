@@ -1,0 +1,36 @@
+[package]
+name = "lyrichar-home"
+version.workspace = true
+authors.workspace = true
+rust-version.workspace = true
+edition.workspace = true
+description = "Lyrics at the speed of thought (home)."
+documentation = "https://docs.rs/lyrichar-home"
+readme = "README.md"
+repository.workspace = true
+license.workspace = true
+keywords = ["lyrics", "home"]
+
+[dependencies.chrono]
+workspace = true
+features = ["default"]
+
+[dependencies.dioxus]
+workspace = true
+features = ["fullstack", "router", "default"]
+
+[dependencies.dioxus-i18n]
+workspace = true
+
+[dependencies.unic-langid]
+workspace = true
+features = ["macros"]
+
+[features]
+default = ["web"]
+web = ["dioxus/web"]
+server = ["dioxus/server"]
+
+[package.metadata.docs.rs]
+features = []
+rustdoc-args = ["--cfg", "docsrs"]

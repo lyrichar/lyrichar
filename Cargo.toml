@@ -1,0 +1,79 @@
+[workspace]
+members = ["crates/*"]
+resolver = "3"
+
+[workspace.package]
+version = "0.1.0"
+authors = ["Lyrichar <hello@lyrichar.app>"]
+rust-version = "1.96"
+edition = "2024"
+repository = "https://github.com/lyrichar/lyrichar"
+license = "MIT"
+
+[workspace.dependencies.axum]
+version = "0.8.9"
+default-features = false
+
+[workspace.dependencies.chrono]
+version = "0.4.45"
+default-features = false
+
+[workspace.dependencies.clap]
+version = "4.6.1"
+default-features = false
+
+[workspace.dependencies.dioxus]
+version = "0.7.9"
+default-features = false
+
+[workspace.dependencies.dioxus-i18n]
+version = "0.5.1"
+
+[workspace.dependencies.serde]
+version = "1.0.228"
+default-features = false
+
+[workspace.dependencies.thiserror]
+version = "2.0.18"
+default-features = false
+
+[workspace.dependencies.tokio]
+version = "1.52.3"
+default-features = false
+
+[workspace.dependencies.unic-langid]
+version = "0.9.6"
+default-features = false
+
+[workspace.dependencies.lyrichar-api]
+path = "crates/lyrichar-api"
+version = "0.1.0"
+default-features = false
+
+[workspace.dependencies.lyrichar-core]
+path = "crates/lyrichar-core"
+version = "0.1.0"
+default-features = false
+
+[package]
+name = "lyrichar"
+version.workspace = true
+authors.workspace = true
+rust-version.workspace = true
+edition.workspace = true
+description = "Lyrics at the speed of thought."
+documentation = "https://docs.rs/lyrichar"
+readme = "README.md"
+repository.workspace = true
+license.workspace = true
+keywords = ["lyrics"]
+
+[dependencies.lyrichar-api]
+workspace = true
+
+[dependencies.lyrichar-core]
+workspace = true
+
+[package.metadata.docs.rs]
+features = []
+rustdoc-args = ["--cfg", "docsrs"]

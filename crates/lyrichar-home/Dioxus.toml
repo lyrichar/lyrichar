@@ -1,0 +1,11 @@
+[application]
+name = "lyrichar-home"
+asset_dir = "assets"
+out_dir = "build"
+
+[web.app]
+title = "Lyrichar"
+
+[web.watcher]
+reload_html = true
+watch_path = ["assets", "src", "index.html"]

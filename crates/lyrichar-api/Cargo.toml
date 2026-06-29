@@ -1,0 +1,16 @@
+[package]
+name = "lyrichar-api"
+version.workspace = true
+authors.workspace = true
+rust-version.workspace = true
+edition.workspace = true
+description = "Lyrics at the speed of thought (API)."
+documentation = "https://docs.rs/lyrichar-api"
+readme = "README.md"
+repository.workspace = true
+license.workspace = true
+keywords = ["lyrics", "api"]
+
+[package.metadata.docs.rs]
+features = []
+rustdoc-args = ["--cfg", "docsrs"]

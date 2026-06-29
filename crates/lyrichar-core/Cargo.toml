@@ -1,0 +1,19 @@
+[package]
+name = "lyrichar-core"
+version.workspace = true
+authors.workspace = true
+rust-version.workspace = true
+edition.workspace = true
+description = "Lyrics at the speed of thought (core)."
+documentation = "https://docs.rs/lyrichar-core"
+readme = "README.md"
+repository.workspace = true
+license.workspace = true
+keywords = ["lyrics", "core"]
+
+[dependencies.thiserror]
+workspace = true
+
+[package.metadata.docs.rs]
+features = []
+rustdoc-args = ["--cfg", "docsrs"]

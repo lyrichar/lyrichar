@@ -1,0 +1,20 @@
+[application]
+name = "lyrichar"
+asset_dir = "assets"
+out_dir = "build"
+sub_package = "lyrichar-app"
+
+[web.app]
+title = "Lyrichar"
+
+[web.watcher]
+reload_html = true
+watch_path = ["assets", "src", "index.html"]
+
+[bundle]
+identifier = "app.lyrichar"
+publisher = "Lyrichar"
+copyright = "Copyright 2026 Lyrichar"
+category = "Music"
+short_description = "Lyrics at the speed of thought."
+icon = "assets/icon.png"
