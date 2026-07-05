@@ -51,9 +51,7 @@ pub fn Home() -> Element {
 
                 div { class: "relative ml-auto flex space-x-8",
 
-                    div { class: "hidden md:flex space-x-8",
-
-                    }
+                    div { class: "hidden md:flex space-x-8" }
 
                     button {
                         r#type: "button",
