@@ -25,9 +25,3 @@
         }
     }
 }
-
-@layer utilities {
-    .hover-linear-text {
-        @apply hover:text-transparent hover:bg-clip-text hover:bg-linear-to-b hover:from-lyrics-magenta hover:to-lyrics-yellow;
-    }
-}

@@ -14,6 +14,10 @@ keywords = ["lyrics", "core"]
 [dependencies.thiserror]
 workspace = true
 
+[dependencies.unic-langid]
+workspace = true
+features = ["macros"]
+
 [package.metadata.docs.rs]
 features = []
 rustdoc-args = ["--cfg", "docsrs"]

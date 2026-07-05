@@ -1,15 +1,15 @@
 [package]
-name = "lyrichar-home"
+name = "lyrichar-web"
 version.workspace = true
 authors.workspace = true
 rust-version.workspace = true
 edition.workspace = true
-description = "Lyrics at the speed of thought (home)."
-documentation = "https://docs.rs/lyrichar-home"
+description = "Lyrics at the speed of thought (web)."
+documentation = "https://docs.rs/lyrichar-web"
 readme = "README.md"
 repository.workspace = true
 license.workspace = true
-keywords = ["lyrics", "home"]
+keywords = ["lyrics", "web"]
 
 [dependencies.chrono]
 workspace = true
@@ -25,6 +25,9 @@ workspace = true
 [dependencies.unic-langid]
 workspace = true
 features = ["macros"]
+
+[dependencies.lyrichar-core]
+workspace = true
 
 [features]
 default = ["web"]

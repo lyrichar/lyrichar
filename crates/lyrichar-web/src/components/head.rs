@@ -10,6 +10,8 @@ pub const STYLE: Asset = asset!(
         .with_preload(true)
 );
 
+pub const ICONS: &str = "https://kit.fontawesome.com/c83c1d48a9.js";
+
 pub const ICON_PNG: Asset = asset!(
     "/assets/icon.png",
     ImageAssetOptions::new().with_hash_suffix(false)
@@ -53,5 +55,11 @@ pub fn Head(title: String, description: String, url: String) -> Element {
         document::Link { rel: "icon", href: ICON_SVG }
 
         document::Link { rel: "apple-touch-icon", href: ICON_PNG }
+
+        document::Script {
+            async: true,
+            crossorigin: "anonymous",
+            src: ICONS,
+        }
     }
 }

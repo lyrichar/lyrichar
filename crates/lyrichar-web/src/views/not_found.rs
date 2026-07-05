@@ -1,9 +1,8 @@
 use dioxus::{fullstack::*, prelude::*};
+use dioxus_i18n::tid;
 
 use crate::{components::head::Head, urls};
 
-pub const NOT_FOUND: &str = "Not Found";
-pub const DESCRIPTION: &str = "This route was not found.";
 pub const SLASH: &str = "/";
 
 #[component]
@@ -15,31 +14,45 @@ pub fn NotFound(route: Vec<String>) -> Element {
 
     rsx! {
         Head {
-            title: NOT_FOUND,
-            description: DESCRIPTION,
+            title: tid!("not-found"),
+            description: tid!("not-found.description"),
             url: url,
         }
 
         div {
+            class: "
+                mx-auto
+                max-w-md sm:max-w-3xl lg:max-w-5xl
+                px-4 sm:px-6 lg:px-8
+                flex flex-col lg:flex-row
+                justify-between
+                gap-5
+                pt-16 sm:pt-20 lg:pt-24
+            ",
             section {
                 h1 {
                     class: "text-5xl lg:text-7xl",
                     span {
                         class: "text-transparent bg-clip-text bg-linear-to-b from-lyrics-magenta to-lyrics-yellow",
-                        { NOT_FOUND }
+                        { tid!("not-found") }
                     }
                 }
 
                 p {
                     class: "text-xl",
-                    "Route "
+
+                    { tid!("not-found.route") }
+
+                    " "
 
                     span {
                         class: "wrap-break-word text-transparent bg-clip-text bg-linear-to-r from-lyrics-magenta to-lyrics-yellow",
                         "{SLASH}{route}"
                     }
 
-                    " was not found."
+                    " "
+
+                    { tid!("not-found.detail") }
                 }
             }
         }

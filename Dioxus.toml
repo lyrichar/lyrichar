@@ -17,4 +17,4 @@ publisher = "Lyrichar"
 copyright = "Copyright 2026 Lyrichar"
 category = "Music"
 short_description = "Lyrics at the speed of thought."
-icon = "assets/icon.png"
+icon = ["assets/icon.png"]
