@@ -28,6 +28,11 @@ default-features = false
 
 [workspace.dependencies.dioxus-i18n]
 version = "0.5.1"
+default-features = false
+
+[workspace.dependencies.dioxus-sdk]
+version = "0.7.0"
+default-features = false
 
 [workspace.dependencies.serde]
 version = "1.0.228"

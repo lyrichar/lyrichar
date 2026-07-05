@@ -1,9 +1,9 @@
 use dioxus::prelude::*;
 use dioxus_i18n::{prelude::*, tid};
 
-use lyrichar_core::languages::{Language, LanguageCycle, LanguageString};
+use lyrichar_core::languages::{LanguageCycle, LanguageString};
 
-use crate::{chrono, components::head::Head, routes::Route, urls};
+use crate::{chrono, components::head::Head, routes::Route, translations::use_language, urls};
 
 pub const NAME: Asset = asset!(
     "/assets/name.svg",
@@ -17,22 +17,27 @@ pub fn Home() -> Element {
 
     let mut i18n = i18n();
 
-    let language: Option<Language> = i18n.language().try_into().ok();
+    let mut language = use_language();
 
-    let next_language = move |_| i18n.set_language(language.cycle().id());
+    let cycle = move |_| {
+        let cycled = language.read().cycle();
+
+        language.set(cycled);
+    };
+
+    use_effect(move || {
+        i18n.set_language(language.read().id());
+    });
 
     rsx! {
         Head {
             title: tid!("home"),
             description: tid!("home.description"),
-            url: url,
+            url,
         }
 
-        nav {
-            aria_label: "Navigation",
-            class: "absolute flex w-full",
-            div {
-                class: "
+        nav { aria_label: "Navigation", class: "absolute flex w-full",
+            div { class: "
                     mx-auto
                     max-w-md sm:max-w-3xl lg:max-w-7xl
                     px-4 sm:px-6 lg:px-8 py-4
@@ -40,24 +45,16 @@ pub fn Home() -> Element {
                     w-full
                 ",
 
-                Link {
-                    to: Route::Home {},
-                    class: "mr-auto",
-                    img {
-                        class: "w-auto h-16",
-                        src: NAME,
-                        alt: "Lyrichar",
-                    }
+                Link { to: Route::Home {}, class: "mr-auto",
+                    img { class: "w-auto h-16", src: NAME, alt: "Lyrichar" }
                 }
 
-                div {
-                    class: "relative ml-auto flex space-x-8",
+                div { class: "relative ml-auto flex space-x-8",
 
-                    div {
-                        class: "hidden md:flex space-x-8",
+                    div { class: "hidden md:flex space-x-8",
 
                         button {
-                            type: "button",
+                            r#type: "button",
 
                             class: "
                                 flex items-center justify-center
@@ -67,15 +64,14 @@ pub fn Home() -> Element {
                                 rounded-lg
                             ",
 
-                            onclick: next_language,
+                            onclick: cycle,
 
-                            label {
-                                class: "
+                            label { class: "
                                     text-xl text-transparent
                                     bg-clip-text bg-linear-to-b
                                     from-lyrics-magenta to-lyrics-yellow
                                 ",
-                                { language.string() }
+                                {language.read().string()}
                             }
                         }
                     }
@@ -91,14 +87,13 @@ pub fn Home() -> Element {
                             w-full sm:w-auto
                             rounded-lg
                         ",
-                        "Open",
+                        "Open"
                     }
                 }
             }
         }
 
-        div {
-            class: "
+        div { class: "
                 mx-auto
                 max-w-md sm:max-w-3xl lg:max-w-7xl
                 px-4 sm:px-6 lg:px-8
@@ -108,18 +103,16 @@ pub fn Home() -> Element {
                 pt-16 sm:pt-20 lg:pt-24
             ",
 
-            section {
-                class: "my-12 w-full lg:w-1/2",
-                h1 {
-                    class: "text-5xl lg:text-7xl",
-                    { tid!("slogan") }
-                    span {
-                        class: "
+            section { class: "my-12 w-full lg:w-1/2",
+                h1 { class: "text-5xl lg:text-7xl",
+                    {tid!("slogan")}
+                    span { class: "
                             text-transparent
                             bg-clip-text bg-linear-to-b
                             from-lyrics-magenta to-lyrics-yellow
                             animate-blink
-                        ", "▏"
+                        ",
+                        "▏"
                     }
                 }
             }

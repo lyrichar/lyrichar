@@ -1,5 +1,6 @@
 use std::{fmt, str::FromStr};
 
+use serde::{Deserialize, Deserializer, Serialize, Serializer, de::Error as _};
 use thiserror::Error;
 
 use unic_langid::{LanguageIdentifier, langid};
@@ -63,6 +64,22 @@ pub struct Error;
 pub enum Language {
     English,
     Russian,
+}
+
+impl Serialize for Language {
+    fn serialize<S: Serializer>(&self, serializer: S) -> Result<S::Ok, S::Error> {
+        self.as_str().serialize(serializer)
+    }
+}
+
+impl<'de> Deserialize<'de> for Language {
+    fn deserialize<D: Deserializer<'de>>(deserializer: D) -> Result<Self, D::Error> {
+        let string = <&str>::deserialize(deserializer)?;
+
+        let language = string.parse().map_err(D::Error::custom)?;
+
+        Ok(language)
+    }
 }
 
 impl Default for Language {

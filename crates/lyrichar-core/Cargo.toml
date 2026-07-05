@@ -18,6 +18,10 @@ workspace = true
 workspace = true
 features = ["macros"]
 
+[dependencies.serde]
+workspace = true
+features = ["std"]
+
 [package.metadata.docs.rs]
 features = []
 rustdoc-args = ["--cfg", "docsrs"]

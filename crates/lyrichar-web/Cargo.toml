@@ -22,6 +22,10 @@ features = ["fullstack", "router", "default"]
 [dependencies.dioxus-i18n]
 workspace = true
 
+[dependencies.dioxus-sdk]
+workspace = true
+features = ["storage"]
+
 [dependencies.unic-langid]
 workspace = true
 features = ["macros"]

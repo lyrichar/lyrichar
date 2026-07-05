@@ -2,7 +2,7 @@ use dioxus::prelude::*;
 use dioxus_i18n::prelude::*;
 
 use crate::{
-    translations::i18n_config,
+    translations::{i18n_config, use_language},
     views::{home::Home, not_found::NotFound},
 };
 
@@ -19,11 +19,13 @@ pub enum Route {
 
 #[component]
 pub fn App() -> Element {
-    use_init_i18n(i18n_config);
+    let language = use_language();
+
+    let initial = language.read().cloned();
+
+    use_init_i18n(move || i18n_config(initial));
 
     rsx! {
-        main {
-            Router::<Route> {}
-        }
+        main { Router::<Route> {} }
     }
 }

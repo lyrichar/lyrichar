@@ -45,9 +45,7 @@ pub fn Head(title: String, description: String, url: String) -> Element {
 
         document::Meta { name: "description", content: description }
 
-        document::Title {
-            { title }
-        }
+        document::Title { {title} }
 
         document::Stylesheet { href: STYLE }
 
@@ -56,10 +54,6 @@ pub fn Head(title: String, description: String, url: String) -> Element {
 
         document::Link { rel: "apple-touch-icon", href: ICON_PNG }
 
-        document::Script {
-            async: true,
-            crossorigin: "anonymous",
-            src: ICONS,
-        }
+        document::Script { r#async: true, crossorigin: "anonymous", src: ICONS }
     }
 }

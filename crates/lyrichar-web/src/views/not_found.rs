@@ -16,11 +16,10 @@ pub fn NotFound(route: Vec<String>) -> Element {
         Head {
             title: tid!("not-found"),
             description: tid!("not-found.description"),
-            url: url,
+            url,
         }
 
-        div {
-            class: "
+        div { class: "
                 mx-auto
                 max-w-md sm:max-w-3xl lg:max-w-5xl
                 px-4 sm:px-6 lg:px-8
@@ -30,29 +29,29 @@ pub fn NotFound(route: Vec<String>) -> Element {
                 pt-16 sm:pt-20 lg:pt-24
             ",
             section {
-                h1 {
-                    class: "text-5xl lg:text-7xl",
-                    span {
-                        class: "text-transparent bg-clip-text bg-linear-to-b from-lyrics-magenta to-lyrics-yellow",
-                        { tid!("not-found") }
+                h1 { class: "text-5xl lg:text-7xl",
+                    span { class: "
+                        text-transparent
+                        bg-clip-text bg-linear-to-b
+                        from-lyrics-magenta to-lyrics-yellow
+                    ",
+                        {tid!("not-found")}
                     }
                 }
 
-                p {
-                    class: "text-xl",
+                p { class: "text-xl",
 
-                    { tid!("not-found.route") }
+                    {tid!("not-found.route")}
 
                     " "
 
-                    span {
-                        class: "wrap-break-word text-transparent bg-clip-text bg-linear-to-r from-lyrics-magenta to-lyrics-yellow",
+                    span { class: "wrap-break-word text-transparent bg-clip-text bg-linear-to-r from-lyrics-magenta to-lyrics-yellow",
                         "{SLASH}{route}"
                     }
 
                     " "
 
-                    { tid!("not-found.detail") }
+                    {tid!("not-found.detail")}
                 }
             }
         }
