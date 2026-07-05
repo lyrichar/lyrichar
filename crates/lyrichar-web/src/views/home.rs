@@ -53,26 +53,27 @@ pub fn Home() -> Element {
 
                     div { class: "hidden md:flex space-x-8",
 
-                        button {
-                            r#type: "button",
+                    }
 
-                            class: "
-                                flex items-center justify-center
-                                bg-neutral-900 dark:bg-neutral-50
-                                h-10 px-4
-                                w-full sm:w-auto
-                                rounded-lg
+                    button {
+                        r#type: "button",
+
+                        class: "
+                            flex items-center justify-center
+                            bg-neutral-900 dark:bg-neutral-50
+                            h-10 px-4
+                            w-full sm:w-auto
+                            rounded-lg
+                        ",
+
+                        onclick: cycle,
+
+                        label { class: "
+                                text-xl text-transparent
+                                bg-clip-text bg-linear-to-b
+                                from-lyrics-magenta to-lyrics-yellow
                             ",
-
-                            onclick: cycle,
-
-                            label { class: "
-                                    text-xl text-transparent
-                                    bg-clip-text bg-linear-to-b
-                                    from-lyrics-magenta to-lyrics-yellow
-                                ",
-                                {language.read().string()}
-                            }
+                            {language.read().string()}
                         }
                     }
 
