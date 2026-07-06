@@ -31,7 +31,10 @@ pub fn Head(title: String, description: String, url: String) -> Element {
     let icon = urls::asset(ICON_PNG);
 
     rsx! {
-        document::Meta { name: "viewport", content: "width=device-width, initial-scale=1" }
+        document::Meta {
+            name: "viewport",
+            content: "width=device-width, initial-scale=1, viewport-fit=cover",
+        }
 
         document::Meta { charset: "utf-8" }
 

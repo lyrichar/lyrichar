@@ -28,7 +28,7 @@ pub fn LanguageButton() -> Element {
             aria_label: "Change language",
 
             class: "
-                fixed bottom-4 right-4
+                fixed bottom-safe-b right-4
                 h-10 px-4 rounded-lg
                 bg-linear-to-b from-lyrics-magenta to-lyrics-yellow
                 z-50
@@ -37,9 +37,7 @@ pub fn LanguageButton() -> Element {
 
             onclick: cycle,
 
-            span { class: "text-xl text-neutral-50 dark:text-neutral-900",
-                {language.read().string()}
-            }
+            span { class: "text-xl text-neutral-50 dark:text-neutral-900", {language.read().string()} }
         }
     }
 }

@@ -51,7 +51,7 @@ pub fn Home() -> Element {
                         class: "
                             flex items-center justify-center
                             text-xl
-                            bg-gradient-to-b from-lyrics-magenta to-lyrics-yellow
+                            bg-linear-to-b from-lyrics-magenta to-lyrics-yellow
                             text-neutral-50 dark:text-neutral-900
                             h-10 px-4
                             w-full sm:w-auto
@@ -78,7 +78,7 @@ pub fn Home() -> Element {
                 h1 { class: "text-5xl lg:text-7xl",
                     {tid!("slogan")}
 
-                    span { class: "cursor", { SPACE } }
+                    span { class: "cursor", {SPACE} }
                 }
             }
         }

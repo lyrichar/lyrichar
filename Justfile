@@ -8,3 +8,6 @@ WEB_PACKAGE := "lyrichar-web"
 
 web:
     dx run --release --port {{ WEB }} --package {{ WEB_PACKAGE }}
+
+fmt:
+    dx fmt
