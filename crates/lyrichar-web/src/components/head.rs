@@ -13,11 +13,11 @@ pub const STYLE: Asset = asset!(
 pub const ICONS: &str = "https://kit.fontawesome.com/c83c1d48a9.js";
 
 pub const ICON_PNG: Asset = asset!(
-    "/assets/icon.png",
+    "/assets/images/icon.png",
     ImageAssetOptions::new().with_hash_suffix(false)
 );
 pub const ICON_SVG: Asset = asset!(
-    "/assets/icon.svg",
+    "/assets/images/icon.svg",
     ImageAssetOptions::new().with_hash_suffix(false)
 );
 

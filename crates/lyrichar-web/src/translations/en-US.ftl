@@ -6,4 +6,6 @@ not-found = Not found
     .route = The route
     .detail = was not found.
 
+open = Open
+
 slogan = Lyrics at the speed of thought.

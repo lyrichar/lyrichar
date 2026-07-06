@@ -24,7 +24,7 @@ workspace = true
 
 [dependencies.dioxus-sdk]
 workspace = true
-features = ["storage"]
+features = ["storage", "time"]
 
 [dependencies.unic-langid]
 workspace = true
