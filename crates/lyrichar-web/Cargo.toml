@@ -26,6 +26,10 @@ workspace = true
 workspace = true
 features = ["storage", "time"]
 
+[dependencies.pid1]
+workspace = true
+optional = true
+
 [dependencies.unic-langid]
 workspace = true
 features = ["macros"]
@@ -36,7 +40,7 @@ workspace = true
 [features]
 default = ["web"]
 web = ["dioxus/web"]
-server = ["dioxus/server"]
+server = ["dioxus/server", "pid1"]
 
 [package.metadata.docs.rs]
 features = []

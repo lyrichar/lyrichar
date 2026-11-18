@@ -11,6 +11,63 @@ repository.workspace = true
 license.workspace = true
 keywords = ["lyrics", "api"]
 
+[dependencies.anyhow]
+workspace = true
+features = ["std"]
+
+[dependencies.axum]
+workspace = true
+features = [
+    "http1",
+    "http2",
+    "json",
+    "macros",
+    "matched-path",
+    "multipart",
+    "original-uri",
+    "tokio",
+    "tracing",
+    "form",
+    "query",
+]
+
+[dependencies.bon]
+workspace = true
+features = ["std"]
+
+[dependencies.clap]
+workspace = true
+features = ["std", "color", "help", "usage", "error-context", "suggestions", "derive", "env"]
+
+[dependencies.pid1]
+workspace = true
+
+[dependencies.serde]
+workspace = true
+features = ["std", "derive"]
+
+[dependencies.thiserror]
+workspace = true
+
+[dependencies.tokio]
+workspace = true
+features = ["full"]
+
+[dependencies.url]
+workspace = true
+features = ["std", "serde"]
+
+[dependencies.utoipa]
+workspace = true
+features = ["macros", "debug", "axum_extras", "chrono", "uuid", "url", "preserve_order"]
+
+[dependencies.utoipa-axum]
+workspace = true
+
+[dependencies.utoipa-swagger-ui]
+workspace = true
+features = ["axum", "cache", "reqwest"]
+
 [package.metadata.docs.rs]
 features = []
 rustdoc-args = ["--cfg", "docsrs"]

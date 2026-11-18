@@ -5,25 +5,41 @@ resolver = "3"
 [workspace.package]
 version = "0.1.0"
 authors = ["Lyrichar <hello@lyrichar.app>"]
-rust-version = "1.96"
+rust-version = "1.98"
 edition = "2024"
 repository = "https://github.com/lyrichar/lyrichar"
 license = "MIT"
+
+# api
 
 [workspace.dependencies.axum]
 version = "0.8.9"
 default-features = false
 
-[workspace.dependencies.chrono]
-version = "0.4.45"
+[workspace.dependencies.clap]
+version = "4.6.7"
 default-features = false
 
-[workspace.dependencies.clap]
-version = "4.6.1"
+[workspace.dependencies.url]
+version = "2.5.8"
 default-features = false
+
+[workspace.dependencies.utoipa]
+version = "5.5.0"
+default-features = false
+
+[workspace.dependencies.utoipa-axum]
+version = "0.2.0"
+default-features = false
+
+[workspace.dependencies.utoipa-swagger-ui]
+version = "9.0.2"
+default-features = false
+
+# dioxus
 
 [workspace.dependencies.dioxus]
-version = "0.7.9"
+version = "0.7.10"
 default-features = false
 
 [workspace.dependencies.dioxus-i18n]
@@ -34,29 +50,104 @@ default-features = false
 version = "0.7.0"
 default-features = false
 
-[workspace.dependencies.serde]
-version = "1.0.228"
-default-features = false
-
-[workspace.dependencies.thiserror]
-version = "2.0.18"
-default-features = false
-
-[workspace.dependencies.tokio]
-version = "1.52.3"
-default-features = false
-
 [workspace.dependencies.unic-langid]
 version = "0.9.6"
 default-features = false
+
+# macros
+
+[workspace.dependencies.proc-macro2]
+version = "1.0.107"
+default-features = false
+
+[workspace.dependencies.quote]
+version = "1.0.47"
+default-features = false
+
+[workspace.dependencies.syn]
+version = "3.0.5"
+default-features = false
+
+# shared
+
+[workspace.dependencies.anyhow]
+version = "1.0.104"
+default-features = false
+
+[workspace.dependencies.bon]
+version = "3.10.1"
+default-features = false
+
+[workspace.dependencies.chrono]
+version = "0.4.45"
+default-features = false
+
+[workspace.dependencies.non-empty-str]
+version = "0.12.0"
+default-features = false
+
+[workspace.dependencies.pid1]
+version = "0.1.6"
+default-features = false
+
+[workspace.dependencies.serde]
+version = "1.0.229"
+default-features = false
+
+[workspace.dependencies.thiserror]
+version = "2.0.20"
+default-features = false
+
+[workspace.dependencies.tokio]
+version = "1.53.1"
+default-features = false
+
+# vault
+
+[workspace.dependencies.argon2]
+version = "0.6.0"
+default-features = false
+
+[workspace.dependencies.chacha20poly1305]
+version = "0.11.0"
+default-features = false
+
+[workspace.dependencies.rand]
+version = "0.10.2"
+default-features = false
+
+[workspace.dependencies.x25519-dalek]
+version = "3.0.0"
+default-features = false
+
+[workspace.dependencies.zeroize]
+version = "1.9.0"
+default-features = false
+
+# lyrichar
 
 [workspace.dependencies.lyrichar-api]
 path = "crates/lyrichar-api"
 version = "0.1.0"
 default-features = false
 
+[workspace.dependencies.lyrichar-chords]
+path = "crates/lyrichar-chords"
+version = "0.1.0"
+default-features = false
+
 [workspace.dependencies.lyrichar-core]
 path = "crates/lyrichar-core"
+version = "0.1.0"
+default-features = false
+
+[workspace.dependencies.lyrichar-macros]
+path = "crates/lyrichar-macros"
+version = "0.1.0"
+default-features = false
+
+[workspace.dependencies.lyrichar-vault]
+path = "crates/lyrichar-vault"
 version = "0.1.0"
 default-features = false
 
@@ -76,7 +167,16 @@ keywords = ["lyrics"]
 [dependencies.lyrichar-api]
 workspace = true
 
+[dependencies.lyrichar-chords]
+workspace = true
+
 [dependencies.lyrichar-core]
+workspace = true
+
+[dependencies.lyrichar-macros]
+workspace = true
+
+[dependencies.lyrichar-vault]
 workspace = true
 
 [package.metadata.docs.rs]

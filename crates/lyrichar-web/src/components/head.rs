@@ -1,7 +1,6 @@
 use dioxus::prelude::*;
-use dioxus_i18n::prelude::*;
 
-use crate::urls;
+use crate::{translations::use_language, urls};
 
 pub const STYLE: Asset = asset!(
     "/assets/tailwind.css",
@@ -26,7 +25,7 @@ pub const TYPE: &str = "website";
 
 #[component]
 pub fn Head(title: String, description: String, url: String) -> Element {
-    let language = i18n().language().to_string();
+    let language = use_language().read().id().to_string();
 
     let icon = urls::asset(ICON_PNG);
 

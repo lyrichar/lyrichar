@@ -1,0 +1,43 @@
+[package]
+name = "lyrichar-chords"
+version.workspace = true
+authors.workspace = true
+rust-version.workspace = true
+edition.workspace = true
+description = "Lyrics at the speed of thought (chords)."
+documentation = "https://docs.rs/lyrichar-chords"
+readme = "README.md"
+repository.workspace = true
+license.workspace = true
+keywords = ["lyrics", "chords"]
+
+[dependencies.bon]
+workspace = true
+features = ["std"]
+
+[dependencies.non-empty-str]
+workspace = true
+features = ["std"]
+
+[dependencies.proc-macro2]
+workspace = true
+optional = true
+
+[dependencies.quote]
+workspace = true
+optional = true
+
+[dependencies.syn]
+workspace = true
+optional = true
+
+[dependencies.thiserror]
+workspace = true
+
+[features]
+default = []
+proc-macro = ["proc-macro2", "quote", "syn"]
+
+[package.metadata.docs.rs]
+features = []
+rustdoc-args = ["--cfg", "docsrs"]

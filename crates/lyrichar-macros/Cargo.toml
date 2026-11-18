@@ -1,0 +1,31 @@
+[package]
+name = "lyrichar-macros"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Lyrics at the speed of thought (macros)."
+documentation = "https://docs.rs/lyrichar-macros"
+readme = "README.md"
+repository.workspace = true
+license.workspace = true
+keywords = ["lyrics", "macros"]
+
+[lib]
+proc-macro = true
+
+[dependencies.lyrichar-chords]
+workspace = true
+features = ["proc-macro"]
+
+[dependencies.proc-macro2]
+workspace = true
+features = ["proc-macro"]
+
+[dependencies.quote]
+workspace = true
+features = ["proc-macro"]
+
+[dependencies.syn]
+workspace = true
+features = ["parsing", "printing", "proc-macro"]

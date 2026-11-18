@@ -1,0 +1,39 @@
+[package]
+name = "lyrichar-vault"
+version.workspace = true
+authors.workspace = true
+rust-version.workspace = true
+edition.workspace = true
+description = "Lyrics at the speed of thought (vault)."
+documentation = "https://docs.rs/lyrichar-vault"
+readme = "README.md"
+repository.workspace = true
+license.workspace = true
+keywords = ["lyrics", "vault"]
+
+[dependencies.argon2]
+workspace = true
+features = ["alloc", "password-hash", "rand_core", "zeroize"]
+
+[dependencies.chacha20poly1305]
+workspace = true
+features = ["alloc", "rand_core", "zeroize"]
+
+[dependencies.rand]
+workspace = true
+features = ["std", "sys_rng"]
+
+[dependencies.thiserror]
+workspace = true
+
+[dependencies.x25519-dalek]
+workspace = true
+features = ["precomputed-tables", "static_secrets", "zeroize"]
+
+[dependencies.zeroize]
+workspace = true
+features = ["alloc", "derive"]
+
+[package.metadata.docs.rs]
+features = []
+rustdoc-args = ["--cfg", "docsrs"]

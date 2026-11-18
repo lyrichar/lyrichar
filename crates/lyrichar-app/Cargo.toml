@@ -1,0 +1,34 @@
+[package]
+name = "lyrichar-app"
+version.workspace = true
+authors.workspace = true
+rust-version.workspace = true
+edition.workspace = true
+description = "Lyrics at the speed of thought (app)."
+documentation = "https://docs.rs/lyrichar-app"
+readme = "README.md"
+repository.workspace = true
+license.workspace = true
+keywords = ["lyrics", "app"]
+
+[dependencies.dioxus]
+workspace = true
+features = ["fullstack", "router", "default"]
+
+[dependencies.dioxus-i18n]
+workspace = true
+
+[dependencies.unic-langid]
+workspace = true
+features = ["macros"]
+
+[features]
+default = ["web"]
+web = ["dioxus/web"]
+desktop = ["dioxus/desktop"]
+mobile = ["dioxus/mobile"]
+server = ["dioxus/server"]
+
+[package.metadata.docs.rs]
+features = []
+rustdoc-args = ["--cfg", "docsrs"]
